@@ -17,6 +17,10 @@
                             <input type="text" name="title" id="title" placeholder="Software Engineer"
                                 class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         </div>
+
+                        @error('title')
+                            <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="sm:col-span-4">
@@ -25,6 +29,10 @@
                             <input type="text" name="salary" id="salary" placeholder="$50,000.00"
                                 class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         </div>
+                        
+                        @error('salary')
+                            <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                        @enderror
                     </div>
                 </div>
             </div>
