@@ -30,16 +30,16 @@ class JobController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store()
+    public function store(Request $request)
     {
-        request()->validate([
+        $request->validate([
             'title' => ['required', 'min:3'],
             'salary' => ['required'],
         ]);
 
         Job::create([
-            'title' => request('title'),
-            'salary' => request('salary'),
+            'title' => $request->title,
+            'salary' => $request->salary,
             'employer_id' => 1
         ]);
 
@@ -65,16 +65,16 @@ class JobController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Job $job)
+    public function update(Request $request, Job $job)
     {
-        request()->validate([
+        $request->validate([
             'title' => ['required', 'min:3'],
             'salary' => ['required'],
         ]);
 
         $job->update([
-            'title' => request('title'),
-            'salary' => request('salary')
+            'title' => $request->title,
+            'salary' => $request->salary
         ]);
 
         return redirect('/jobs/' . $job->id);

@@ -16,7 +16,7 @@
                     <div class="sm:col-span-3">
                         <x-form-label for="first_name">First Name</x-form-label>
                         <div class="mt-2">
-                            <x-form-input type="text" name="first_name" id="first_name" placeholder="John" />
+                            <x-form-input type="text" name="first_name" id="first_name" placeholder="John" :value="old('first_name')" />
                         </div>
 
                         <x-form-error name="first_name" />
@@ -25,7 +25,7 @@
                     <div class="sm:col-span-3">
                         <x-form-label for="last_name">Last Name</x-form-label>
                         <div class="mt-2">
-                            <x-form-input type="text" name="last_name" id="last_name" placeholder="Doe" />
+                            <x-form-input type="text" name="last_name" id="last_name" placeholder="Doe" :value="old('last_name')" />
                         </div>
 
                         <x-form-error name="last_name" />
@@ -34,7 +34,7 @@
                     <div class="sm:col-span-full">
                         <x-form-label for="email">Email</x-form-label>
                         <div class="mt-2">
-                            <x-form-input type="email" name="email" id="email" placeholder="john@example.com" />
+                            <x-form-input type="email" name="email" id="email" placeholder="john@example.com" :value="old('email')" />
                         </div>
 
                         <x-form-error name="email" />
@@ -52,7 +52,7 @@
                     <div class="sm:col-span-3">
                         <x-form-label for="password_confirmation">Confirm Password</x-form-label>
                         <div class="mt-2">
-                            <x-form-input type="password_confirmation" name="password_confirmation"
+                            <x-form-input type="password" name="password_confirmation"
                                 id="password_confirmation" placeholder="********" />
                         </div>
 
